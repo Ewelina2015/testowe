@@ -10,7 +10,7 @@
 
 				if (!mysql_connect($adres_ip_serwera_mysql, $login_bazy_danych,$haslo_bazy_danych)) 
 					{
-					  echo 'Nie moge polaczyc sie z baza danych';
+					  echo 'Nie moge polaczyc sie z baza';
 					  exit (0);
 					}					
 		 
