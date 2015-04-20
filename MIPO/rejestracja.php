@@ -14,12 +14,11 @@
 <div id="bodyPan">
   <div id="rejestrujPanel">
     <h2>Zarejestruj się i korzystaj w pełni</h2>
-    <form name="login" id="rejestracja_formularz" action="#" method="post" onsubmit="return checkForm(this);"> 
+    <form name="login" id="rejestracja_formularz" action="#" method="post" onsubmit="return checkForm(this);">
         <label>Login</label>
-        <input class="inputs" type="text" name="login" required=required value="<?php if(isset($_POST['utworz_konto_bt'])){echo $_POST['login'];}?>"/>
-        <label>Adres email</label>
-        <input class="inputs" type="email" placeholder="nazwa@domena.com" name="email" required=required 
-               value="<?php if(isset($_POST['utworz_konto_bt'])){echo $_POST['email'];}?>"/>
+        <input class="inputs" type="text" name="login" required=required />
+        <label id="mail">Adres email</label>
+        <input class="inputs" type="email" placeholder="nazwa@domena.com" name="email" required=required/>
         <label>Hasło (min 6 znaków, w tym cyfra)</label>
         <input class="inputs" type="password" name="haslo" required=required />
         <label>Potwierdź hasło</label>
@@ -49,43 +48,42 @@
 
   function checkForm(form)
   {
-
     re = /^\w+$/;
-    if(!re.test(form.login.value)) {
+    if(!re.test(form.username.value)) {
       alert("Błąd: Login może zawierać jedynie litery i liczby!");
-      form.login.focus();
+      form.username.focus();
       return false;
     }
 
-    if(form.haslo.value === form.pwd2.value) {
-      if(form.haslo.value.length < 6) {
+    if(form.pwd1.value === form.pwd2.value) {
+      if(form.pwd1.value.length < 6) {
         alert("Błąd: Hasło musi składać się co najmniej 6 znaków!");
-        form.haslo.focus();
+        form.pwd1.focus();
         return false;
       }
-      if(form.haslo.value === form.login.value) {
+      if(form.pwd1.value === form.username.value) {
         alert("Błąd: Hasło musi być różne od loginu!");
-        form.haslo.focus();
+        form.pwd1.focus();
         return false;
       }
       re = /[0-9]/;
-      if(!re.test(form.haslo.value)) {
+      if(!re.test(form.pwd1.value)) {
         alert("Błąd: hasło musi zawierać co najmniej jedną cyfrę!");
-        form.haslo.focus();
+        form.pwd1.focus();
         return false;
       }
 
         }
         else {
       alert("Błąd: Hasła są różne!");
-      form.haslo.focus();
+      form.pwd1.focus();
       return false;
     }
-    form.submit();
     return true;
   }
 
 </script>
+
 <?php
      $servername = "127.0.0.1";
      $username = "root";
@@ -94,47 +92,27 @@
       mysql_connect($servername, $username, $password);
       mysql_select_db($dbname);
 
-
  if(isset($_POST['utworz_konto_bt']))
  {
      $login = $_POST['login'];
      $haslo = $_POST['haslo'];
      $email = $_POST['email'];
 
- $query = mysql_query("SELECT login FROM Users WHERE login='".$login."'");
- $query2 = mysql_query("SELECT email FROM Users WHERE email='".$email."'");
-         if (mysql_num_rows($query) != 0)
-  { print '<script type="text/javascript">';
-      print 'alert("Email '. $_POST['email'].' już istnieje w bazie danych. Spróbuj jeszcze raz")';
-      print '</script>'; 
-      
-              }
 
-  else if (mysql_num_rows($query2) != 0)
-  {
-      print '<script type="text/javascript">';
-      print 'alert("Email '. $_POST['email'].' już istnieje w bazie danych. Spróbuj jeszcze raz")';
-      print '</script>';   
-  }
-        else{
 $sql = "INSERT INTO users (login, password, email)
 VALUES ('$login', '$haslo', '$email')";
 
 if (mysql_query($sql)) 
 {
-    header("Location: index.html");
-exit;
-    //echo "Dodano nowy rekord!";
+    echo "New record created successfully";
 } 
 else 
 {
-    echo "Błąd!: " . $sql . "<br>";
+    echo "Error: " . $sql . "<br>";
 }
-        }
+
 
      }
-        
 ?>
-
     
 </html>

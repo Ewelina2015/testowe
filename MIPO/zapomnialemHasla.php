@@ -18,14 +18,14 @@
         <label id="login_resetowanie" >Login</label>
         <input id="input_login_resetowanie"  type="text" required=required name="login" />  
         <label id="mail_resetowanie" >Adres email</label>
-        <input id="input_mail_resetowanie"  type="email" placeholder="nazwa@domena.com" required=required name="email" />   
-        <div id="powroty3">
-       <p>lub</p>
-      <a href="rejestracja.html">Powróć do logowania</a>
-      </div>
+        <input id="input_mail_resetowanie"  type="email" placeholder="nazwa@domena.com" required=required name="email" />  
         <input id="resetuj_haslo_btn" type="submit" name="submit" value="Resetuj hasło"/>
     </form>
-  
+   <div id="powroty3">
+      <p>lub</p>
+     <a href="rejestracja.html">Powróć do logowania</a>
+
+   </div>
   </div>
 </div>
     <?php

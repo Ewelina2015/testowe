@@ -42,8 +42,7 @@ img.center{display: block;
 #rejestrujPanel{width:550px; height:400px; display:block;  position:relative; margin-left:auto; margin-right:auto;   padding:0; border:2px solid #696969; background:#fff; color:#000;}
 #rejestrujPanel h2{display:block; position:relative; text-align: center;  top:5%; font:20px Comic Sans MS,Georgia, Times, serif; text-transform:uppercase;}
 #rejestracja_formularz{width:550px; position:relative; top:5%; height:108px; padding:0; margin:0 0 0 8px; }
-#rejestracja_formularz label{width:100px; position:relative; display:block; float:left; top:10%; margin:10px 0px 0px 20px }
-
+#rejestracja_formularz label{width:100px; position:relative; display:block; float:left; top:10%; margin:15px 0px 0px 20px }
 
 .inputs{
     width:120px; 
@@ -67,13 +66,12 @@ img.center{display: block;
 #powroty2{display:block; margin-top:25%;}
 
 /*STRONA ZAPOMNIALEM HASLA*/
-#resetujPanel{width:550px; height:300px; display:block;  position:relative; margin-left:auto; margin-right:auto;   padding:0; border:2px solid #696969; background:#fff; color:#000;}
+#resetujPanel{width:550px; height:250px; display:block;  position:relative; margin-left:auto; margin-right:auto;   padding:0; border:2px solid #696969; background:#fff; color:#000;}
 #resetujPanel h2{display:block; position:relative; text-align: center;   top:5%; font:20px Comic Sans MS,Georgia, Times, serif; text-transform:uppercase;}
-#login_resetowanie{width:100px; position:relative; display:block; float:left; margin-top:10%; margin-left: 15% }
-#mail_resetowanie{width:100px; position:relative; display:block; float:left; margin-top:5%; margin-left: 15% }
-#input_mail_resetowanie{float:left; display:block; width:200px; height:16px;  margin-top:5%; margin-left: 0% }
+#resetujPanel label{width:100px; position:relative; display:block; float:left; margin-top:10%; margin-left: 15% }
+#input_mail_resetowanie{float:left; display:block; width:200px; height:16px;  margin-top:10%; margin-left: 0%;}
 #input_login_resetowanie{float:left; display:block; width:200px; height:16px;  margin-top:10%; margin-left: 0% }
-#resetuj_haslo_btn{float:left; display:block; width:190px; height:30px; margin-left:33%; position:relative;  margin-top:5%; background-color:#5EA000; color:white}
-#powroty3{display:block; position:relative; margin-left:37%; float:left; margin-top:5%;  }
+#resetuj_haslo_btn{float:left; display:block; width:190px; height:30px; margin-left:33%; margin-top:5%; background-color:#5EA000; color:white}
+#powroty3{display:block; margin-top:25%;}
 #powroty3 p{text-align: center}
-#powroty3 a{display:block;  margin-right:auto;}
+#powroty3 a{display:block; margin-left:38%; margin-right:auto;}

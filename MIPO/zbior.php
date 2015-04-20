@@ -1,16 +1,16 @@
 <?php
 	class Zbior
 	{
-		function connect()
+		public function connect()
 		{
-				$adres_ip_serwera_mysql = '127.0.0.1';
-				$nazwa_bazy_danych = 'app';
+				$adres_ip_serwera_mysql = 'localhost';
+				$nazwa_bazy_danych = 'App';
 				$login_bazy_danych = 'root';
-				$haslo_bazy_danych = '';
+				$haslo_bazy_danych = 'lato-2015';
 
 				if (!mysql_connect($adres_ip_serwera_mysql, $login_bazy_danych,$haslo_bazy_danych)) 
 					{
-					  echo 'Nie moge polaczyc sie z baza';
+					  echo 'Nie moge polaczyc sie z baza danych';
 					  exit (0);
 					}					
 		 
@@ -32,7 +32,7 @@
 					$login = $_POST['login'];
 					$email  = $_POST['email'];
 					
-					$danekonta = mysql_query("SELECT password, email, login FROM users WHERE login= '$login' AND email='$email'") or die(mysql_error());
+					$danekonta = mysql_query("SELECT password, email, login FROM Users WHERE login= '$login' AND email='$email'") or die(mysql_error());
 					$pdanekonta = mysql_fetch_array($danekonta);
 
 					if (strlen($_POST['email']) < 1) 
@@ -72,6 +72,76 @@
 					    echo "<p> Hasło zostało wysłane na e-mail: $email</p>";        
 					  
 				}       
+		}
+
+		public function clear($text) {
+		    // jeśli serwer automatycznie dodaje slashe to je usuwamy
+		    if(get_magic_quotes_gpc()) 
+		    {
+		        $text = stripslashes($text);
+		    }
+		    $text = trim($text); // usuwamy białe znaki na początku i na końcu
+		    $text = mysql_real_escape_string($text); // filtrujemy tekst aby zabezpieczyć się przed sql injection
+		    $text = htmlspecialchars($text); // dezaktywujemy kod html
+		 return $text;
+}
+
+		public function zaloguj()
+		{
+			session_start();
+			self::connect();
+			
+
+			if(isset($_POST['wyslij']))
+			{
+				if(isset($_SESSION['zalogowany']))
+				{
+					echo 'jestes juz zalogowany';
+					//exit(0);
+					header('Location: glowna.php');
+				}
+					if(isset($_POST['login']) && isset($_POST['password']))
+					{
+
+						$login = self::clear($_POST['login']);
+						$password = self::clear($_POST['password']);
+						$zapytanie = mysql_query("SELECT idUser FROM Users WHERE login= '$login' AND password = '$password'");
+
+						if(mysql_num_rows($zapytanie) ==0 )
+						{
+							echo 'Nieprawidłowe dane logowania';
+							exit(0);
+						}
+						else
+						{
+								$_SESSION['zalogowany'] = true;
+								$_SESSION['login'] = $login;
+								$_SESSION['password'] = $password;
+								echo 'Jesteś zalogowany';
+								header('Location: glowna.php');
+						}		
+					}
+						
+			}
+				
+		}
+
+		public function wyloguj()
+		{
+			if(isset($_POST['wyloguj']))
+				{
+					if(!isset($_SESSION['zalogowany']))
+					{
+						echo 'nie byłeś zalogowany';
+						exit(0);
+					}
+					else
+					{
+					session_destroy();
+					echo 'Jesteś wylogowany';
+					header('Location: index.php');
+					}
+				}
 		}
 		
 	}			
