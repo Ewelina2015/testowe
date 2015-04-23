@@ -8,7 +8,7 @@
 <body>
 
 <div id="headerPan">
-      <img src = "logo.jpg" height = "400"  alt = "logo" class="center"/>
+      <img src = "images/logo.png" height = "400"  alt = "logo" class="center"/>
 </div>
     
 <div id="bodyPan">
@@ -31,7 +31,7 @@
       <h2>Dołącz do nas!</h2>
        <button id="facebook_btn" type="button"></button> 
        <button id="google_btn" type="button"></button> 
-       <img id="lub" src = "lub.png" width = "230" height="30"  alt = "linia" />
+       <img id="lub" src = "images/lub.png" width = "230" height="30"  alt = "linia" />
        <form action="rejestracja.html">
            <input id="nowe_konto_btn" type="submit" value="Utwórz nowe konto"/>
        </form>

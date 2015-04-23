@@ -1,17 +1,3 @@
-<<<<<<< HEAD
-=======
-<?php
-session_start();
-if(!isset($_SESSION['zalogowany'])){
-  $_SESSION['komunikat'] = "Nie jestes zalogowany!";
-  include('zbior.php');
-  exit();
-}
-include('zbior.php');
-    $zbior = new Zbior();
-    $zbior -> wyloguj();
-?>
->>>>>>> 6d2c884eafd3ae16549f431df1251df3a87ecfd1
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
     <head>
@@ -23,12 +9,7 @@ include('zbior.php');
         <div id="topPan"><a href="#"><img src="images/logo.gif" title="Green Solutions" alt="Green Solutions" /></a>
             <div id="topPanMenu">
                 <img src="images/photo.gif"/>
-<<<<<<< HEAD
-                <p><a class="link2" href="zarzadzanieKontem.html">Moje konto</a>    <a class="link2" href="index.html">Wyloguj</a></p>
-=======
-                <p><a class="link2" href="zarzadzanieKontem.html">Moje konto</a>    <form method="post" class="link2">
-                    <input id="wyloguj_btn" type="submit"  value="Wyloguj" name="wyloguj"/></form></p>
->>>>>>> 6d2c884eafd3ae16549f431df1251df3a87ecfd1
+                <p><a class="link2" href="zarzadzanieKontem.html">Moje konto</a>    <a class="link2" href="index.php">Wyloguj</a></p>
                 <ul>
                     <li><a class="link1" href="glowna.php">Lista zakup√≥w</a></li>
                     <li><a class="link1" href="mojeGrupy.html">Moje grupy</a></li>
@@ -90,10 +71,13 @@ include('zbior.php');
                             <h2>Zapisz</h2>
                         </div>
                     </h4>
-                    <?php filldiv() ?>
+                    <?php 
+                    require("pomocnicza.php");
+                    $j = new Jakas();
+                    $j->filldiv() ?>
                     <div class="sum">
                         <h2 class="s1"> Suma: </h2>
-                        <h2 class="s2">2,89 z≈Ç</h2>
+                        <?php $j->wypiszSume() ?>
                     </div>
                 </div>
 
@@ -101,50 +85,4 @@ include('zbior.php');
         </div>
 
     </body>
-    <?php
-    function filldiv() {
-      $servername = "127.0.0.1";
-        $username = "root";
-        $password = "";
-        $dbname = "app";
-        $connection = @mysql_connect($servername, $username, $password)
-                or die('Brak po≥πczenia z serwerem MySQL');
-        $db = @mysql_select_db($dbname, $connection)
-                or die('Nie mogÍ po≥πczyÊ siÍ z bazπ danych');
-
-        $loopResult = '';
-        $wynik = mysql_query("SELECT name,price,quantity,priority FROM items")
-                or die('B≥πd zapytania');
-
-        if (mysql_num_rows($wynik) > 0) {
-            echo '<table id="table">';
-            echo '<tr>
-                            <th class="th1">Nazwa</th>
-                            <th class="th2">Ilosc</th> 
-                            <th class="th3">Cena</th>
-                            <th class="th4">Priorytet</th>
-                        </tr>';
-            
-            while ($r = mysql_fetch_assoc($wynik)) {
-                $loopResult .= ' 
-                        <tr class="column1">
-                            <td>' . $r['name'] . '</td>
-                        </tr>
-                        <tr class="column2">
-                            <td>' . $r['quantity'] . '</td>
-                        </tr>
-                        <tr class="column3">
-                            <td>' . $r['price'] . '</td>
-                        </tr>
-                        <tr class="column4">
-                            <td>' . $r['priority'] . '</td>
-                        </tr>
-                    ';
-            }
-             echo $loopResult;
-             echo '</table>';
-        }
-       
-    }
-    ?>
 </html>

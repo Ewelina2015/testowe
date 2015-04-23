@@ -3,9 +3,7 @@ div, p, h1, h2, h3, ul, img{padding:0px; margin:0px;}
 ul{list-style-type:none;}
 
 /* HEADER PANEL */
-img.center{display: block;
-  margin-left: auto;
-  margin-right: auto;}
+img.center{display: block; margin-left: auto; margin-right: auto;}
 
 
 /* BODY PANEL */
@@ -27,13 +25,13 @@ img.center{display: block;
 /*JOIN US PANEL*/
 #joinUs{width:237px; height:240px; display:block; position:relative; margin-left:500px;  padding:0; border:2px solid #696969; background:#fff; color:#000;}
 #joinUs h2{height:48px; display:block; position:relative; padding:0 45px 0 45px;  font:16px/48px  Comic Sans MS,Georgia,"Times New Roman", Times, serif; text-transform:uppercase;}
-#facebook_btn{display:block; width:170px; height:30px; margin-right:auto; margin-left:auto; margin-top:10px; background-image:url(zalogujFacebook.png);}
-#google_btn{display:block; width:170px; height:30px; margin-right:auto; margin-left:auto; margin-top:10px; background-image:url(zalogujGoogle.png);}
+#facebook_btn{display:block; width:170px; height:30px; margin-right:auto; margin-left:auto; margin-top:10px; background-image:url(images/zalogujFacebook.png);}
+#google_btn{display:block; width:170px; height:30px; margin-right:auto; margin-left:auto; margin-top:10px; background-image:url(images/zalogujGoogle.png);}
 #lub{display:block; margin-right:auto; margin-left:auto; margin-top: 10px}
 #nowe_konto_btn{display:block; width:170px; height:30px; margin-left:auto; margin-right:auto; margin-top:10px; background-color:#5EA000; color:white}
 
 /*GET IT ON PANEL*/
-#google_play_btn{display:block; width:170px; height:35px; margin-right:auto; margin-left:auto; margin-top:5%; background-image:url(getit.jpg);}
+#google_play_btn{display:block; width:170px; height:35px; margin-right:auto; margin-left:auto; margin-top:5%; background-image:url(images/getit.jpg);}
 
 /*FOOTER*/
 #footerPan{ margin-right:auto; margin-left:auto; display:block; position:absolute; font:12px/15px  Comic Sans MS,Georgia, sans-serif;}
@@ -44,15 +42,7 @@ img.center{display: block;
 #rejestracja_formularz{width:550px; position:relative; top:5%; height:108px; padding:0; margin:0 0 0 8px; }
 #rejestracja_formularz label{width:100px; position:relative; display:block; float:left; top:10%; margin:15px 0px 0px 20px }
 
-.inputs{
-    width:120px; 
-    position:relative; 
-    display:block; 
-    float:left; 
-    top:10%;
-    margin:15px 0px 0px 10px;
-    
-}
+.inputs{width:120px; position:relative; display:block; float:left; top:10%; margin:15px 0px 0px 10px;}
 #utworz_konto_btn{float:left; display:block; width:190px; height:40px; margin-left:30%; margin-right:auto; margin-top:10%; background-color:#5EA000; color:white}
 #regulamin{float:left; display:block; margin-top:10%;}
 #powroty{;display:block; margin-top:40%;}

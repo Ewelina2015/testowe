@@ -157,6 +157,9 @@
                         <tr class="column4">
                             <td>' . $r['priority'] . '</td>
                         </tr>
+                        <tr class="column5">
+                            <img class="img2" src="images/icon2.gif"/>
+                        </tr>
                     ';
             }
              echo $loopResult;

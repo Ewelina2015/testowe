@@ -8,7 +8,7 @@
 <body>
 
 <div id="headerPan">
-      <img src = "logo.jpg" height = "400"  alt = "logo" class="center"/>
+      <img src = "images/logo.png" height = "400"  alt = "logo" class="center"/>
 </div>
     
 <div id="bodyPan">

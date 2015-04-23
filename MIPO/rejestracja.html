@@ -8,7 +8,7 @@
 <body>
 
 <div id="headerPan">
-      <img src = "logo.jpg" height = "400"  alt = "logo" class="center"/>
+      <img src = "images/logo.png" height = "400"  alt = "logo" class="center"/>
 </div>
     
 <div id="bodyPan">
@@ -33,7 +33,7 @@
    </form>
     
    <div id="powroty">
-      <img id="strzalka" src = "strzalka.jpg" height="30" width="40" alt = "strzalka"/> 
+      <img id="strzalka" src = "images/strzalka.jpg" height="30" width="40" alt = "strzalka"/> 
       <a id="powrot" href="index.html">Powrót</a> 
     </div>
 </div>
