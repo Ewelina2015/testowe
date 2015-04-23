@@ -30,7 +30,7 @@
             while ($r = mysql_fetch_assoc($wynik)) {
                 $loopResult .= ' 
                         <tr class="column1">
-                            <td>' . $r['name'] . '</td>
+                            <td onClick="alert('. 'Kliknieto!' .')">' . $r['name'] . '</td>
                         </tr>
                         <tr class="column2">
                             <td>' . $r['quantity'] . '</td>
@@ -42,7 +42,11 @@
                             <td>' . $r['priority'] . '</td>
                         </tr>
                         <tr class="column5">
-                            <td><img class="img1" src="images/icon1.gif" type="button" name="usuwanie"/></td>
+                            <td>
+                             <form name="usunProdukt" action="#" method="post">
+                             <img class="img1" src="images/icon1.gif" type="submit" name="usuwanie" onClick="usun($r["name"]);" />
+                             </form>   
+                             </td>
                         </tr>
                     ';
                 self::$suma+=$r['price'];
@@ -56,12 +60,13 @@
             echo '<h2 class="s2">' .self::$suma. '</h2>';
         }
 
-      /*  public function usun(){
-            $usun=$_POST['usuwanie'];
-             if (isset($usun))
-                $sql = @mysql_query("DELETE FROM items WHERE ");
+       public function usun($id){
+        $usun=$_POST['usuwanie'];
+             if (isset($usun)){
+                $sql = @mysql_query("DELETE FROM items WHERE name==$id");
+            }
 
         }
-        */
+        
     }
     ?>
