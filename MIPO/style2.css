@@ -108,14 +108,14 @@ ul{list-style-type:none;}
 #rightbodyPan .column1{width:160px; float:left;}
 #rightbodyPan .column2{width:100px; float:left; }
 #rightbodyPan .column3{width:70px; float:left; }
-#rightbodyPan .column4{width:100px; float:left; }
+#rightbodyPan .column4{width:105px; float:left; }
 #rightbodyPan .column5{width:20px; float:left; }
 #rightbodyPan .th1{width: 160px; float: left; left:0px; text-align: left; font:14px/14px Georgia, "Times New Roman", Times, serif; font-weight: bold; }
 #rightbodyPan .th2{width: 100px; float: left; left:0px; text-align: left; font:14px/14px Georgia, "Times New Roman", Times, serif; font-weight: bold; }
 #rightbodyPan .th3{width: 70px; float: left; left:0px; text-align: left; font:14px/14px Georgia, "Times New Roman", Times, serif; font-weight: bold; }
-#rightbodyPan .th4{width: 1001px; float: left; left:0px; text-align: left; font:14px/14px Georgia, "Times New Roman", Times, serif; font-weight: bold; }
+#rightbodyPan .th4{width: 105px; float: left; left:0px; text-align: left; font:14px/14px Georgia, "Times New Roman", Times, serif; font-weight: bold; }
 #rightbodyPan .th5{width: 20px; float: left; left:0px; text-align: left; font:14px/14px Georgia, "Times New Roman", Times, serif; font-weight: bold; }
-#rightbodyPan .column5 .img1{width: 17px; height: 17px; padding: 11px 0px 0px 50px; }
+#rightbodyPan .img1{width: 17px; height: 17px;}
 #rightbodyPan .sum{width:490px; height:31px; position:absolute; left:0px; top:516px; right:0px; border-top:1px solid #DCDAC2}
 #rightbodyPan .s1{float:left; width:415px; margin:10px 0 0px 0px; font:12px/12px Georgia, "Times New Roman", Times, serif;}
 #rightbodyPan .s2{float:left; width:60px; margin:10px 0 0px 0px; font:12px/12px Georgia, "Times New Roman", Times, serif;}

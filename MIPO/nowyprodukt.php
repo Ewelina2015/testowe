@@ -141,6 +141,7 @@
                             <th class="th2">Ilosc</th> 
                             <th class="th3">Cena</th>
                             <th class="th4">Priorytet</th>
+                            <th class="th5"></th>
                         </tr>';
             
             while ($r = mysql_fetch_assoc($wynik)) {
@@ -158,7 +159,7 @@
                             <td>' . $r['priority'] . '</td>
                         </tr>
                         <tr class="column5">
-                            <img class="img2" src="images/icon2.gif"/>
+                            <td><img class="img1" src="images/icon1.gif"/></td>
                         </tr>
                     ';
             }
