@@ -1,3 +1,15 @@
+<?php
+session_start();
+if(!isset($_SESSION['zalogowany'])){
+  $_SESSION['komunikat'] = "Nie jestes zalogowany!";
+  include('zbior.php');
+  exit();
+}
+include('zbior.php');
+    $zbior = new Zbior();
+    $zbior -> wyloguj();
+?>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
     <head>
@@ -9,7 +21,8 @@
         <div id="topPan"><a href="#"><img src="images/logo.gif" title="Green Solutions" alt="Green Solutions" /></a>
             <div id="topPanMenu">
                 <img src="images/photo.gif"/>
-                <p><a class="link2" href="zarzadzanieKontem.html">Moje konto</a>    <a class="link2" href="index.php">Wyloguj</a></p>
+                <p><a class="link2" href="zarzadzanieKontem.html">Moje konto</a>    <form method="post" class="link2">
+                    <input id="wyloguj_btn" type="submit"  value="Wyloguj" name="wyloguj"/></form></p>
                 <ul>
                     <li><a class="link1" href="glowna.php">Lista zakupów</a></li>
                     <li><a class="link1" href="mojeGrupy.html">Moje grupy</a></li>
