@@ -21,8 +21,13 @@ if(!isset($_SESSION['zalogowany'])){
         <div id="topPan"><a href="#"><img src="images/logo.gif" title="Green Solutions" alt="Green Solutions" /></a>
             <div id="topPanMenu">
                 <img src="images/photo.gif"/>
-                <p><a class="link2" href="zarzadzanieKontem.php">Moje konto</a>    <form method="post" class="link2">
-                    <input id="wyloguj_btn" type="submit"  value="Wyloguj" name="wyloguj"/></form></p>
+                <div class="konto">
+                 <form method="post">
+                    <a class="link2" href="zarzadzanieKontem.php">Moje konto</a>  
+                    <input class="link2" id="wyloguj_btn" type="submit"  value="Wyloguj" name="wyloguj"/>
+                    
+                </form>
+                </div>
                 <ul>
                     <li><a class="link1" href="glowna.php">Lista zakupów</a></li>
                     <li><a class="link1" href="mojeGrupy.html">Moje grupy</a></li>
@@ -80,9 +85,7 @@ if(!isset($_SESSION['zalogowany'])){
                             <h2 onClick=" location.href = 'nowyprodukt.php'"> Nowy produkt</h2>
 
                         </div>
-                        <div class="b2">
-                            <h2>Zapisz</h2>
-                        </div>
+                        
                     </h4>
                     <?php 
                     require("pomocnicza.php");

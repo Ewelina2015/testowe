@@ -14,7 +14,8 @@ ul{list-style-type:none;}
 #topPanMenu ul li a{width:104px; height:35px; display:block; font:14px/14px Georgia,"Times New Roman", Times, serif; color:#e6e5e5; text-decoration:none; margin:0; padding:10px 0 0 0; } //moje grupy
 .link1{color:#e6e5e5}
 .link1:hover{color: #e5e5e5; border-bottom: 2px solid #DCDAC2; padding-bottom: 20px}
-.link2{color:#e6e5e5; text-decoration: none; font: 10px/10px Georgia,"Times New Roman", Times, serif;}
+.konto{ margin-left: 419px}
+.link2{color:#e6e5e5; text-decoration: none; font: 10px/10px Georgia,"Times New Roman", Times, serif; background: none; border: none}
 .link2:hover{color: #e5e5e5}
 #topPanMenu ul li span{width:104px; height:35px; display:block; color:#2E4E00; text-decoration:none; padding:61px 0 0 0; line-height:14px;} //lista zakupów 
 
