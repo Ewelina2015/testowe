@@ -1,12 +1,18 @@
 <?php
 	class Zbior
+
 	{
+		public function __construct()
+		{
+			session_start();
+		}
+		
 		public function connect()
 		{
-				$adres_ip_serwera_mysql = 'localhost';
-				$nazwa_bazy_danych = 'App';
+				$adres_ip_serwera_mysql = '127.0.0.1';
+				$nazwa_bazy_danych = 'app';
 				$login_bazy_danych = 'root';
-				$haslo_bazy_danych = 'lato-2015';
+				$haslo_bazy_danych = '';
 
 				if (!mysql_connect($adres_ip_serwera_mysql, $login_bazy_danych,$haslo_bazy_danych)) 
 					{
@@ -32,7 +38,7 @@
 					$login = $_POST['login'];
 					$email  = $_POST['email'];
 					
-					$danekonta = mysql_query("SELECT password, email, login FROM Users WHERE login= '$login' AND email='$email'") or die(mysql_error());
+					$danekonta = mysql_query("SELECT password, email, login FROM users WHERE login= '$login' AND email='$email'") or die(mysql_error());
 					$pdanekonta = mysql_fetch_array($danekonta);
 
 					if (strlen($_POST['email']) < 1) 
@@ -62,7 +68,7 @@
 					    
 					$haslo = rand(1000,9999);
 					$haslomd5 = md5($haslo);
-					mysql_query("UPDATE Users SET password = '$haslomd5' WHERE login= '$login'") or die(mysql_error());
+					mysql_query("UPDATE users SET password = '$haslomd5' WHERE login= '$login'") or die(mysql_error());
 
 						$to      = $email;
 						$subject = 'New password';
@@ -88,7 +94,6 @@
 
 		public function zaloguj()
 		{
-			session_start();
 			self::connect();
 			
 
@@ -105,7 +110,9 @@
 
 						$login = self::clear($_POST['login']);
 						$password = self::clear($_POST['password']);
-						$zapytanie = mysql_query("SELECT idUser FROM Users WHERE login= '$login' AND password = '$password'");
+						$zapytanie = mysql_query("SELECT idUser FROM users WHERE login= '$login' AND password = '$password'");
+						$email = mysql_query("SELECT `email` FROM users WHERE login= '$login' AND password = '$password'");
+						$row = mysql_fetch_array($email);
 
 						if(mysql_num_rows($zapytanie) ==0 )
 						{
@@ -117,6 +124,8 @@
 								$_SESSION['zalogowany'] = true;
 								$_SESSION['login'] = $login;
 								$_SESSION['password'] = $password;
+								$_SESSION['email'] = $row[0];
+
 								echo 'Jesteś zalogowany';
 								header('Location: glowna.php');
 						}		
@@ -143,6 +152,21 @@
 					}
 				}
 		}
+
+		public function login()
+
+		{
+
+			echo $_SESSION['login'];
+		}
+
+		public function email()
+
+		{
+
+			echo $_SESSION['email'];
+		}
+		
 		
 	}			
 	?>
