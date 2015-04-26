@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <title>Mydło i Powidło</title>
@@ -17,9 +17,9 @@
       <h2>Masz już konto?</h2>
       <form id="login" method="post">
         <label>Login</label>
-        <input type="text" name="login" />
+        <input class="logowanie_input" type="text" name="login" />
           <label>Hasło</label>
-        <input class="password" type="password" name="password" />
+        <input class="logowanie_input" type="password" name="password" />
           <br/>
       <input id="zaloguj_btn" type="submit"  value="Zaloguj" name="wyslij"/>
       </form>
@@ -32,7 +32,7 @@
        <button id="facebook_btn" type="button"></button> 
        <button id="google_btn" type="button"></button> 
        <img id="lub" src = "images/lub.png" width = "230" height="30"  alt = "linia" />
-       <form action="rejestracja.html">
+       <form action="rejestracja.php">
            <input id="nowe_konto_btn" type="submit" value="Utwórz nowe konto"/>
        </form>
   </div>

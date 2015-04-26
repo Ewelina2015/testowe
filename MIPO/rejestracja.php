@@ -14,14 +14,52 @@
 <div id="bodyPan">
   <div id="rejestrujPanel">
     <h2>Zarejestruj się i korzystaj w pełni</h2>
-    <form name="login" id="rejestracja_formularz" action="#" method="post" onsubmit="return checkForm(this);">
-        <label>Login</label>
+    <form name="login" id="rejestracja_formularz" action="poRejestracji.html" method="post" onsubmit="return checkForm(this);">
+        <label class="labels">Login</label>
+       
         <input class="inputs" type="text" name="login" required=required />
-        <label id="mail">Adres email</label>
+        <label class="labels" id="mail">Adres email</label>
         <input class="inputs" type="email" placeholder="nazwa@domena.com" name="email" required=required/>
-        <label>Hasło (min 6 znaków, w tym cyfra)</label>
+        
+         <label id="komunikat_label">
+            <?php
+     $servername = "127.0.0.1";
+     $username = "root";
+     $password = "";
+     $dbname = "app";
+      mysql_connect($servername, $username, $password);
+      mysql_select_db($dbname);
+
+ if(isset($_POST['utworz_konto_bt']))
+ {
+     $login = $_POST['login'];
+     $haslo = $_POST['haslo'];
+     $email = $_POST['email'];
+
+$sql = "INSERT INTO users (login, password, email)
+VALUES ('$login', '$haslo', '$email')";
+
+$query = mysql_query("SELECT login FROM users WHERE login = '". $login."'");
+
+  if (mysql_num_rows($query) != 0)
+  {
+      echo "Uzytkownik istnieje, sprobuj inna nazwe";
+  }
+  else{
+if (mysql_query($sql)) 
+{
+    header('Location: poRejestracji.html');
+    
+} 
+ }
+ }
+?>
+   
+            
+         </label> 
+        <label id="haslo_label">Hasło (min 6 znaków, w tym cyfra)</label>
         <input class="inputs" type="password" name="haslo" required=required />
-        <label>Potwierdź hasło</label>
+        <label class="labels">Potwierdź hasło</label>
         <input class="inputs" type="password" name="pwd2"required=required />
        
         
@@ -84,35 +122,6 @@
 
 </script>
 
-<?php
-     $servername = "127.0.0.1";
-     $username = "root";
-     $password = "";
-     $dbname = "app";
-      mysql_connect($servername, $username, $password);
-      mysql_select_db($dbname);
 
- if(isset($_POST['utworz_konto_bt']))
- {
-     $login = $_POST['login'];
-     $haslo = $_POST['haslo'];
-     $email = $_POST['email'];
-
-
-$sql = "INSERT INTO users (login, password, email)
-VALUES ('$login', '$haslo', '$email')";
-
-if (mysql_query($sql)) 
-{
-    echo "New record created successfully";
-} 
-else 
-{
-    echo "Error: " . $sql . "<br>";
-}
-
-
-     }
-?>
     
 </html>

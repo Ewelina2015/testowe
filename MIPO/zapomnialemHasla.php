@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <title>Mydło i Powidło</title>
@@ -23,7 +23,7 @@
     </form>
    <div id="powroty3">
       <p>lub</p>
-     <a href="rejestracja.html">Powróć do logowania</a>
+     <a href="index.php">Powróć do logowania</a>
 
    </div>
   </div>
